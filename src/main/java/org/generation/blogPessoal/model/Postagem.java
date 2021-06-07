@@ -3,6 +3,7 @@ package org.generation.blogPessoal.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -39,6 +40,17 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 	
+	@ManyToOne (fetch = FetchType.EAGER)
+	@JsonIgnoreProperties("post")
+	private Usuario user;
+	
+	
+	public Usuario getUser() {
+		return user;
+	}
+	public void setUser(Usuario user) {
+		this.user = user;
+	}
 	public long getId() {
 		return id;
 	}
