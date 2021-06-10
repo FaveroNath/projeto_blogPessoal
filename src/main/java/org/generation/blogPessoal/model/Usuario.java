@@ -18,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="tb_usuarios")
 public class Usuario {
 	
+	
+	
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) long id;
 	
 	private @NotNull(message="Não é permitido nulo") @Size(min = 2, max = 80) String nome;
@@ -29,6 +31,12 @@ public class Usuario {
 	@OneToMany(mappedBy = "user", cascade =  CascadeType.ALL)
 	@JsonIgnoreProperties("user")
 	private List<Postagem> post;
+	
+	public Usuario(String nome, String usuario, String senha) {
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
 	
 	public List<Postagem> getPost() {
 		return post;
