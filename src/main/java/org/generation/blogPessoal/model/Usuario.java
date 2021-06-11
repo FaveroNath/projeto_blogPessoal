@@ -38,6 +38,7 @@ public class Usuario {
 		this.senha = senha;
 	}
 	
+	
 	public List<Postagem> getPost() {
 		return post;
 	}
