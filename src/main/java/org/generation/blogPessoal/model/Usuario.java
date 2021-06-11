@@ -37,6 +37,9 @@ public class Usuario {
 		this.usuario = usuario;
 		this.senha = senha;
 	}
+	public Usuario() {
+		
+	}
 	
 	
 	public List<Postagem> getPost() {
